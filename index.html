@@ -21,13 +21,12 @@
       position: relative;
       font-family: 'Merriweather', serif;
       font-weight: 300;
-      left: -260px;
-      transition: left 300ms;
-      transition-timing-function: cubic-bezier(.6,.04,.98,.34);
       overflow-x: hidden;
+      transform: translate3d(-16.3em, 0, 0);
+      transition: transform 500ms ease;
     }
     body.show-aside {
-      left: 0;
+      transform: translate3d(0, 0, 0);
     }
     img {
       display: block;
@@ -43,11 +42,10 @@
       font-size: 0.8em;
       cursor: pointer;
     }
-
     #menu-button .icon {
       font-size: 3em;
       display: inline-block;
-      transition: all 200ms;
+      transition: transform 250ms;
     }
     #menu-button .icon.rotate {
       transform: rotate(45deg);
@@ -130,6 +128,10 @@
       }
       .grid-item { 
         width: 100%;
+        margin: 0 0 15px 0;
+      }
+      h1 {
+        font-size: 2.45em;
       }
     }
 
