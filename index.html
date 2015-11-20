@@ -35,6 +35,11 @@
       font-size: 2.75rem;
       font-weight: inherit;
     }
+
+    h2 {
+      font-size: 1.5em;
+      text-align: center;
+    }
     #menu-button {
       position: absolute;
       top: -2em;
@@ -110,12 +115,52 @@
       padding: 0 15px;
       width: 33.3333%;
       height: 300px;
+      overflow: hidden;
     }
 
     .grid-item .thumbnail {
       height: 300px;
       background-size: cover;
       background-position: 50% 50%;
+    }
+
+    .glass {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      opacity: 0;
+      transition: opacity 300ms ease;
+    }
+
+    .glass:hover {
+      opacity: 0.8;
+    }
+
+    .glass:hover + .project-title {
+      opacity: 1;
+      top: 50px;
+    }
+
+    .project-title {
+      pointer-events: none;
+      position: absolute;
+      width: 100%;
+      height: 200px;
+      top: 300px;
+      left: 0;
+      padding: 0 15px;
+      opacity: 0;
+      transition: all 300ms ease;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .project-title h2 {
+      padding: 15px;
     }
 
     @media (max-width: 640px) {
@@ -126,7 +171,7 @@
       .from-large {
         display: none;
       }
-      .grid-item { 
+      .grid-item {
         width: 100%;
         margin: 0 0 15px 0;
       }
@@ -142,7 +187,7 @@
       .from-medium {
         display: block;
       }
-      .grid-item { 
+      .grid-item {
         width: 50%;
       }
     }
@@ -157,7 +202,7 @@
       .from-large {
         display: block;
       }
-      .grid-item { 
+      .grid-item {
         width: 33.3333%;
       }
     }
@@ -181,12 +226,69 @@
       </div>
       <header class="section-header"><h1><strong>jordinebot</strong>.work</h1></header>
       <ul class="grid-list no-bullet inline-list js-isotope" data-isotope-options='{ "itemSelector": ".grid-item", "layoutMode": "fitRows" }'>
-        <li class="grid-item"><div class="thumbnail" style="background-image: url(https://placehold.it/400x300)"></div></li>
-        <li class="grid-item"><div class="thumbnail" style="background-image: url(https://placehold.it/400x300)"></div></li>
-        <li class="grid-item"><div class="thumbnail" style="background-image: url(https://placehold.it/400x300)"></div></li>
-        <li class="grid-item"><div class="thumbnail" style="background-image: url(https://placehold.it/400x300)"></div></li>
-        <li class="grid-item"><div class="thumbnail" style="background-image: url(https://placehold.it/400x300)"></div></li>
-        <li class="grid-item"><div class="thumbnail" style="background-image: url(https://placehold.it/400x300)"></div></li>
+        <li class="grid-item">
+          <div class="thumbnail" style="background-image: url(http://loremflickr.com/400/300/landscape?random=1)"></div>
+          <div class="glass"></div>
+          <div class="project-title">
+            <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+          </div>
+        </li>
+        <li class="grid-item">
+          <div class="thumbnail" style="background-image: url(http://loremflickr.com/400/300/landscape?random=2)"></div>
+          <div class="glass"></div>
+          <div class="project-title">
+            <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in imperdiet ante.</h2>
+          </div>
+        </li>
+        <li class="grid-item">
+          <div class="thumbnail" style="background-image: url(http://loremflickr.com/400/300/landscape?random=3)"></div>
+          <div class="glass"></div>
+          <div class="project-title">
+            <h2>Nunc in imperdiet ante.</h2>
+          </div>
+        </li>
+        <li class="grid-item">
+          <div class="thumbnail" style="background-image: url(http://loremflickr.com/400/300/landscape?random=4)"></div>
+          <div class="glass"></div>
+          <div class="project-title">
+            <h2>Lorem Ipsum Dolor sir Amet</h2>
+          </div>
+        </li>
+        <li class="grid-item">
+          <div class="thumbnail" style="background-image: url(http://loremflickr.com/400/300/landscape?random=5)"></div>
+          <div class="glass"></div>
+          <div class="project-title">
+            <h2>Lorem Ipsum Dolor sir Amet</h2>
+          </div>
+        </li>
+        <li class="grid-item">
+          <div class="thumbnail" style="background-image: url(http://loremflickr.com/400/300/landscape?random=6)"></div>
+          <div class="glass"></div>
+          <div class="project-title">
+            <h2>Lorem Ipsum Dolor sir Amet</h2>
+          </div>
+        </li>
+        <li class="grid-item">
+          <div class="thumbnail" style="background-image: url(http://loremflickr.com/400/300/landscape?random=7)"></div>
+          <div class="glass"></div>
+          <div class="project-title">
+            <h2>Lorem Ipsum Dolor sir Amet</h2>
+          </div>
+        </li>
+        <li class="grid-item">
+          <div class="thumbnail" style="background-image: url(http://loremflickr.com/400/300/landscape?random=8)"></div>
+          <div class="glass"></div>
+          <div class="project-title">
+            <h2>Lorem Ipsum Dolor sir Amet</h2>
+          </div>
+        </li>
+        <li class="grid-item">
+          <div class="thumbnail" style="background-image: url(http://loremflickr.com/400/300/landscape?random=9)"></div>
+          <div class="glass"></div>
+          <div class="project-title">
+            <h2>Lorem Ipsum Dolor sir Amet</h2>
+          </div>
+        </li>
       </ul>
     </section>
   </div>
@@ -195,7 +297,7 @@
     function $(id) {
       return document.getElementById(id);
     }
-    $('menu-button').addEventListener('click', function() {  
+    $('menu-button').addEventListener('click', function() {
       document.body.classList.toggle('show-aside');
       //$('menu-icon').innerHTML = '' + ($('menu-icon').innerHTML === '+' ? '-' : '+');
       $('menu-icon').classList.toggle('rotate');
