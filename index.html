@@ -224,7 +224,7 @@
       <div id="menu-button">
         <span id="menu-icon" class="icon">+</span>
       </div>
-      <header class="section-header"><h1><strong>jordinebot</strong>.work</h1></header>
+      <header class="section-header"><h1><strong id="me">jordinebot</strong>.work</h1></header>
       <ul class="grid-list no-bullet inline-list js-isotope" data-isotope-options='{ "itemSelector": ".grid-item", "layoutMode": "fitRows" }'>
         <li class="grid-item">
           <div class="thumbnail" style="background-image: url(http://loremflickr.com/400/300/landscape?random=1)"></div>
@@ -297,10 +297,15 @@
     function $(id) {
       return document.getElementById(id);
     }
+
     $('menu-button').addEventListener('click', function() {
       document.body.classList.toggle('show-aside');
       //$('menu-icon').innerHTML = '' + ($('menu-icon').innerHTML === '+' ? '-' : '+');
       $('menu-icon').classList.toggle('rotate');
+    });
+
+    $('me').addEventListener('mouseup', function() {
+      console.log(window.getSelection().toString());
     });
   </script>
 </body>
