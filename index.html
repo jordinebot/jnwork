@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>jordinebot.work</title>
   <link href='https://fonts.googleapis.com/css?family=Merriweather:700,700italic,300,300italic|Lato:400,700' rel='stylesheet' type='text/css'>
+  <link href="https://file.myfontastic.com/n6vo44Re5QaWo8oCKShBs7/icons.css" rel="stylesheet">
   <style type="text/css" media="screen">
     * {
       margin: 0;
@@ -27,6 +28,9 @@
     }
     body.show-aside {
       transform: translate3d(0, 0, 0);
+    }
+    body.lock-overflow #canvas-wrap {
+      overflow-y: hidden;
     }
     img {
       display: block;
@@ -119,7 +123,7 @@
     .section-header {
       width: 100%;
       text-align: center;
-      margin: 3em 0;
+      margin: 2.5em 0;
     }
     .project-list {
       width: 100%;
@@ -184,6 +188,30 @@
       display: block;
       width: 100%;
       height: 100%;
+    }
+
+    .section-footer {
+      width: 100%;
+      text-align: center;
+    }
+
+    .social-icon {
+      display: inline-block;
+      font-size: 1.5em;
+      margin: 1em;
+      color: #ccc;
+      transition: color 300ms;
+    }
+    .social-icon a {
+      color: inherit;
+      text-decoration: none;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .social-icon:hover {
+      color: #a8a8a8;
     }
 
     @media (max-width: 640px) {
@@ -314,6 +342,13 @@
           </div>
         </li>
       </ul>
+      <footer class="section-footer">
+        <ul class="social-icons-list">
+          <li class="social-icon"><a class="socicon-linkedin" href="https://es.linkedin.com/in/nebotjordi"></a></li>
+          <li class="social-icon"><a class="socicon-github" href="https://github.com/jordinebot"></a></li>
+          <li class="social-icon"><a class="socicon-stackoverflow" href="https://careers.stackoverflow.com/jordinebot"></a></li>
+        </ul>
+      </footer>
     </section>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
@@ -323,6 +358,12 @@
       return document.getElementById(id);
     }
 
+    $('menu-button').addEventListener('click', function() {
+      document.body.classList.toggle('show-aside');
+      document.body.classList.toggle('lock-overflow');
+      $('menu-icon').classList.toggle('rotate');
+    });
+
     function finishedPreload() {
       setTimeout(function() {
         progressBar.classList.toggle('loading');
@@ -331,12 +372,6 @@
         progressBar.style.width = 0;
       }, 1000);
     }
-
-    $('menu-button').addEventListener('click', function() {
-      document.body.classList.toggle('show-aside');
-      //$('menu-icon').innerHTML = '' + ($('menu-icon').innerHTML === '+' ? '-' : '+');
-      $('menu-icon').classList.toggle('rotate');
-    });
 
     var imgLoad = imagesLoaded('.thumbnail', { background: true }, finishedPreload),
         imagesToLoad = 0,
@@ -350,11 +385,46 @@
       if (! progressBar.classList.contains('loading')) {
         progressBar.classList.toggle('loading');
       }
-      progressBar.style.width = 100 * (++alreadyLoaded / imagesToLoad) + '%'
+      progressBar.style.width = 100 * (++alreadyLoaded / imagesToLoad) + '%';
     });
 
+    var timer = {
+      callback : false,
+      timeout  : 300
+    };
+    
+    var selection = '',
+        message   = '';
+ 
     $('me').addEventListener('mouseup', function() {
-      console.log(window.getSelection().toString());
+
+      if (timer.callback) {
+        clearTimeout(timer.callback);
+      }
+      
+      selection = window.getSelection().toString();
+      
+      switch(selection) {
+        case 'jordinebot':
+          message = "Hey! It's me! ;)";
+          break;
+        case 'jordi':
+          message = "Yeap, you can call me that :)";
+          break;
+        case 'nebot':
+          message = "My family name: Nebot.";
+          break;
+        case 'jord':
+          message = "Jord. How my everyday barista calls me... She knows.";
+          break;
+        default:
+          message = "";
+      };
+      if (message !== "") {
+        timer.callback = setTimeout(function() {
+          console.log(message);
+        }, timer.timeout);
+      }
     });
   </script>
 </body>
