@@ -40,6 +40,22 @@
       font-size: 1.5em;
       text-align: center;
     }
+
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 261px;
+      height: 3px;
+      width: 0;
+      transition: all 500ms;
+      background-color: #a8a8a8;
+      opacity: 0;
+    }
+
+    #progress-bar.loading {
+      opacity: 1;
+    }
+
     #menu-button {
       position: absolute;
       top: -2em;
@@ -105,12 +121,12 @@
       text-align: center;
       margin: 3em 0;
     }
-    .grid-list {
+    .project-list {
       width: 100%;
       max-width: 1280px;
       margin: 6em auto;
     }
-    .grid-item {
+    .project-item {
       margin: 0 0 30px 0;
       padding: 0 15px;
       width: 33.3333%;
@@ -118,13 +134,14 @@
       overflow: hidden;
     }
 
-    .grid-item .thumbnail {
+    .project-item .thumbnail {
       height: 300px;
       background-size: cover;
       background-position: 50% 50%;
     }
 
     .glass {
+      cursor: pointer;
       position: absolute;
       top: 0;
       left: 0;
@@ -163,6 +180,12 @@
       padding: 15px;
     }
 
+    .project-link {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
     @media (max-width: 640px) {
       .only-small {
         display: block;
@@ -171,7 +194,7 @@
       .from-large {
         display: none;
       }
-      .grid-item {
+      .project-item {
         width: 100%;
         margin: 0 0 15px 0;
       }
@@ -187,7 +210,7 @@
       .from-medium {
         display: block;
       }
-      .grid-item {
+      .project-item {
         width: 50%;
       }
     }
@@ -202,7 +225,7 @@
       .from-large {
         display: block;
       }
-      .grid-item {
+      .project-item {
         width: 33.3333%;
       }
     }
@@ -210,6 +233,7 @@
   </style>
 </head>
 <body>
+  <div id="progress-bar"></div>
   <div id="canvas-wrap">
     <aside id="menu-wrap">
       <ul class="menu-list no-bullet list">
@@ -225,66 +249,66 @@
         <span id="menu-icon" class="icon">+</span>
       </div>
       <header class="section-header"><h1><strong id="me">jordinebot</strong>.work</h1></header>
-      <ul class="grid-list no-bullet inline-list js-isotope" data-isotope-options='{ "itemSelector": ".grid-item", "layoutMode": "fitRows" }'>
-        <li class="grid-item">
+      <ul id="projects" class="project-list no-bullet inline-list js-isotope" data-isotope-options='{ "itemSelector": ".project-item", "layoutMode": "fitRows" }'>
+        <li class="project-item">
           <div class="thumbnail" style="background-image: url(http://loremflickr.com/400/300/landscape?random=1)"></div>
-          <div class="glass"></div>
+          <div class="glass"><a class="project-link" href="#"></a></div>
           <div class="project-title">
             <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
           </div>
         </li>
-        <li class="grid-item">
+        <li class="project-item">
           <div class="thumbnail" style="background-image: url(http://loremflickr.com/400/300/landscape?random=2)"></div>
-          <div class="glass"></div>
+          <div class="glass"><a class="project-link" href="#"></a></div>
           <div class="project-title">
             <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in imperdiet ante.</h2>
           </div>
         </li>
-        <li class="grid-item">
+        <li class="project-item">
           <div class="thumbnail" style="background-image: url(http://loremflickr.com/400/300/landscape?random=3)"></div>
-          <div class="glass"></div>
+          <div class="glass"><a class="project-link" href="#"></a></div>
           <div class="project-title">
             <h2>Nunc in imperdiet ante.</h2>
           </div>
         </li>
-        <li class="grid-item">
+        <li class="project-item">
           <div class="thumbnail" style="background-image: url(http://loremflickr.com/400/300/landscape?random=4)"></div>
-          <div class="glass"></div>
+          <div class="glass"><a class="project-link" href="#"></a></div>
           <div class="project-title">
             <h2>Lorem Ipsum Dolor sir Amet</h2>
           </div>
         </li>
-        <li class="grid-item">
+        <li class="project-item">
           <div class="thumbnail" style="background-image: url(http://loremflickr.com/400/300/landscape?random=5)"></div>
-          <div class="glass"></div>
+          <div class="glass"><a class="project-link" href="#"></a></div>
           <div class="project-title">
             <h2>Lorem Ipsum Dolor sir Amet</h2>
           </div>
         </li>
-        <li class="grid-item">
+        <li class="project-item">
           <div class="thumbnail" style="background-image: url(http://loremflickr.com/400/300/landscape?random=6)"></div>
-          <div class="glass"></div>
+          <div class="glass"><a class="project-link" href="#"></a></div>
           <div class="project-title">
             <h2>Lorem Ipsum Dolor sir Amet</h2>
           </div>
         </li>
-        <li class="grid-item">
+        <li class="project-item">
           <div class="thumbnail" style="background-image: url(http://loremflickr.com/400/300/landscape?random=7)"></div>
-          <div class="glass"></div>
+          <div class="glass"><a class="project-link" href="#"></a></div>
           <div class="project-title">
             <h2>Lorem Ipsum Dolor sir Amet</h2>
           </div>
         </li>
-        <li class="grid-item">
+        <li class="project-item">
           <div class="thumbnail" style="background-image: url(http://loremflickr.com/400/300/landscape?random=8)"></div>
-          <div class="glass"></div>
+          <div class="glass"><a class="project-link" href="#"></a></div>
           <div class="project-title">
             <h2>Lorem Ipsum Dolor sir Amet</h2>
           </div>
         </li>
-        <li class="grid-item">
+        <li class="project-item">
           <div class="thumbnail" style="background-image: url(http://loremflickr.com/400/300/landscape?random=9)"></div>
-          <div class="glass"></div>
+          <div class="glass"><a class="project-link" href="#"></a></div>
           <div class="project-title">
             <h2>Lorem Ipsum Dolor sir Amet</h2>
           </div>
@@ -293,15 +317,40 @@
     </section>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.2.0/imagesloaded.pkgd.min.js"></script>
   <script>
     function $(id) {
       return document.getElementById(id);
+    }
+
+    function finishedPreload() {
+      setTimeout(function() {
+        progressBar.classList.toggle('loading');
+      }, 500);
+      setTimeout(function() {
+        progressBar.style.width = 0;
+      }, 1000);
     }
 
     $('menu-button').addEventListener('click', function() {
       document.body.classList.toggle('show-aside');
       //$('menu-icon').innerHTML = '' + ($('menu-icon').innerHTML === '+' ? '-' : '+');
       $('menu-icon').classList.toggle('rotate');
+    });
+
+    var imgLoad = imagesLoaded('.thumbnail', { background: true }, finishedPreload),
+        imagesToLoad = 0,
+        alreadyLoaded = 0,
+        progressBar = $('progress-bar');
+
+    imgLoad.on('progress', function(instance, image) {
+      if (! imagesToLoad) {
+        imagesToLoad = instance.elements.length;
+      }
+      if (! progressBar.classList.contains('loading')) {
+        progressBar.classList.toggle('loading');
+      }
+      progressBar.style.width = 100 * (++alreadyLoaded / imagesToLoad) + '%'
     });
 
     $('me').addEventListener('mouseup', function() {
