@@ -1,0 +1,304 @@
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  position: relative;
+  font-family: 'Merriweather', serif;
+  font-weight: 300;
+  overflow-x: hidden;
+  transform: translate3d(-16.3em, 0, 0);
+  transition: transform 500ms ease;
+}
+body.show-aside {
+  transform: translate3d(0, 0, 0);
+}
+body.lock-overflow #canvas-wrap {
+  overflow: hidden;
+}
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+img {
+  display: block;
+}
+h1 {
+  font-size: 2.75rem;
+  font-weight: inherit;
+}
+
+h1 a, h2 a, h3 a, h4 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 261px;
+  height: 3px;
+  width: 0;
+  transition: all 500ms;
+  background-color: #a8a8a8;
+  opacity: 0;
+}
+
+#progress-bar.loading {
+  opacity: 1;
+}
+
+#menu-button {
+  position: absolute;
+  top: -2em;
+  left: 2em;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+#menu-button .icon {
+  font-size: 3em;
+  display: inline-block;
+  transition: transform 250ms;
+}
+#menu-button .icon.rotate {
+  transform: rotate(45deg);
+}
+#canvas-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#menu-wrap {
+  position: absolute;
+  background-color: #333;
+  width: 260px;
+  height: 100%;
+  padding: 4em 2em;
+  bottom: 0;
+}
+.no-bullet {
+  list-style-type: none;
+}
+.inline-list li {
+  float: left;
+}
+.menu-item {
+  font-family: Lato, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #a8a8a8;
+  font-size: 1.5em;
+  font-weight: 700;
+  line-height: 1.75;
+}
+
+.menu-item a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 200ms;
+}
+.menu-item a:hover {
+  color: #eee;
+}
+#main-wrap {
+  position: absolute;
+  left: 260px;
+  width: 100%;
+  height: 100%;
+  margin: 3em 0 3em 0;
+}
+
+.section-header {
+  width: 100%;
+  text-align: center;
+  margin: 2.5em 0;
+}
+.project-list,
+.single-project,
+.page-canvas {
+  width: 100%;
+  max-width: 1280px;
+  margin: 6em auto;
+}
+.project-item {
+  position: relative;
+  margin: 0 0 30px 0;
+  padding: 0 15px;
+  width: 33.3333%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.project-item .thumbnail {
+  height: 300px;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.glass {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.glass:hover {
+  opacity: 0.8;
+}
+
+.glass:hover + .project-title {
+  opacity: 1;
+  top: 50px;
+}
+
+.project-title {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  top: 300px;
+  left: 0;
+  padding: 0 15px;
+  opacity: 0;
+  transition: all 300ms ease;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.project-title h2 {
+  padding: 15px;
+  text-align: center;
+}
+
+.project-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.project-images {
+  width: 70%;
+  float: left;
+  padding: 0 2em;
+}
+.project-image {
+  width: 100%;
+  margin-bottom: 4em;
+}
+.image-wrap {
+  width: 100%;
+}
+.image-wrap img {
+  max-width: 100%;
+}
+
+.project-details {
+  width: 30%;
+  float: left;
+  padding: 0 1em 0 2em;
+}
+
+.project-details h2 {
+  margin: 0 0 2em 0;
+}
+
+.project-details p {
+  line-height: 1.5em;
+  margin: 0 0 0.75em 0;
+  font-weight: 400;
+}
+
+.section-footer {
+  width: 100%;
+  text-align: center;
+}
+
+.social-icon {
+  display: inline-block;
+  font-size: 1.5em;
+  margin: 1em;
+  color: #ccc;
+  transition: color 300ms;
+}
+.social-icon a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.social-icon:hover {
+  color: #a8a8a8;
+}
+
+@media (max-width: 640px) {
+  .only-small {
+    display: block;
+  }
+  .from-medium,
+  .from-large {
+    display: none;
+  }
+  .project-item {
+    width: 100%;
+    margin: 0 0 15px 0;
+  }
+  h1 {
+    font-size: 2.45em;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1023px)  {
+  .only-small {
+    display: none;
+  }
+  .from-medium {
+    display: block;
+  }
+  .project-item {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .only-small {
+    display: none;
+  }
+  .from-medium {
+    display: block;
+  }
+  .from-large {
+    display: block;
+  }
+  .project-item {
+    width: 33.3333%;
+  }
+}
+
+/* Tumblr Hacks */
+
+.index-page .read_more_container {
+  display: none;
+}
