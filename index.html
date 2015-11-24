@@ -30,7 +30,7 @@
       transform: translate3d(0, 0, 0);
     }
     body.lock-overflow #canvas-wrap {
-      overflow-y: hidden;
+      overflow: hidden;
     }
     .clearfix:before,
     .clearfix:after {
@@ -139,7 +139,8 @@
       margin: 2.5em 0;
     }
     .project-list,
-    .single-project {
+    .single-project,
+    .page-canvas {
       width: 100%;
       max-width: 1280px;
       margin: 6em auto;
@@ -207,13 +208,13 @@
     }
 
     .project-images {
-      width: 75%;
+      width: 70%;
       float: left;
-      padding: 0 1em;
+      padding: 0 2em;
     }
     .project-image {
       width: 100%;
-      margin-bottom: 2em;
+      margin-bottom: 4em;
     }
     .image-wrap {
       width: 100%;
@@ -223,9 +224,9 @@
     }
 
     .project-details {
-      width: 25%;
+      width: 30%;
       float: left;
-      padding: 0 1em;
+      padding: 0 1em 0 2em;
     }
 
     .project-details h2 {
@@ -320,11 +321,9 @@
   <div id="canvas-wrap">
     <aside id="menu-wrap">
       <ul class="menu-list no-bullet list">
-        <li class="menu-item"><a href="#">Home</a></li>
-        <li class="menu-item"><a href="#">Works</a></li>
-        <li class="menu-item"><a href="#">About me</a></li>
-        <li class="menu-item"><a href="#">Contact</a></li>
-        <li class="menu-item"><a href="#">Ask</a></li>
+        <li class="menu-item"><a href="{BlogURL}">Works</a></li>
+        <li class="menu-item"><a href="{BlogURL}about">About me</a></li>
+        <li class="menu-item"><a href="{BlogURL}contact">Contact</a></li>
       </ul>
     </aside>
     <section id="main-wrap">
