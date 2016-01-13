@@ -10,8 +10,6 @@ function toggleMenu() {
 
 var menuButton = $('menu-button');
 menuButton.addEventListener('click', toggleMenu);
-var menuOptions = document.querySelectorAll('.menu-item a');
-menuOptions.addEventListener('click', toggleMenu);
 
 function finishedPreload() {
   setTimeout(function() {
