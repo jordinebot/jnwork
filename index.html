@@ -30,13 +30,14 @@
         {block:Posts}
         {block:Photoset}
         <li class="project-item">
+          <a class="project-link" href="{Permalink}">
           {block:Photos}
-          <div class="thumbnail" style="background-image: url({PhotoURL-500})"></div><!--
+          <img class="thumbnail" src="{PhotoURL-500}"><!--
           {/block:Photos} -->
-          <div class="glass"><a class="project-link" href="{Permalink}"></a></div>
           <div class="project-title">
             {Caption}
           </div>
+          </a>
         </li>
         {/block:Photoset}
         {/block:Posts}
@@ -47,12 +48,14 @@
         <ul class="project-images no-bullet inline-list">
           {block:Posts}
           {block:Photoset}
+          <!--
           {block:Photos}
           <li class="project-image">
             <div class="image-wrap">
               <img class="highres-image" src="{PhotoURL-HighRes}" alt="">
             </div>
           </li>
+          <!-- -->
           {/block:Photos}
           {/block:Photoset}
           {/block:Posts}

@@ -37,6 +37,7 @@ body.lock-overflow #canvas-wrap {
 }
 img {
   display: block;
+  max-width: 100%;
 }
 h1 {
   font-size: 2.75rem;
@@ -145,59 +146,33 @@ h2 {
   margin: 0 0 30px 0;
   padding: 0 15px;
   width: 33.3333%;
-  height: 300px;
+  height: 400px;
   overflow: hidden;
 }
 
-.project-item .thumbnail {
-  height: 300px;
-  background-size: cover;
-  background-position: 50% 50%;
-  transition: transform 300ms;
+.project-item a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.glass {
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  opacity: 0;
-  transition: opacity 300ms;
+.project-item:hover .thumbnail {
+
 }
 
 .project-title {
   pointer-events: none;
   position: absolute;
   width: 100%;
-  height: 200px;
-  top: 300px;
+  height: 100px;
+  bottom: 0;
   left: 0;
   padding: 0 15px;
-  opacity: 0;
-  text-shadow: 0 0 10px rgba(0,0,0,0.25);
-  color: white;
+  opacity: 1;
+  color: black;
   display:flex;
   justify-content:center;
   align-items:center;
-  transition: all 300ms;
 }
-
-.project-item:hover .thumbnail {
-  transform: scale(1.1);
-}
-
-.project-item:hover .glass {
-  opacity: 0.25;
-}
-
-.project-item:hover .project-title {
-  top: 50px;
-  opacity: 1;
-}
-
 
 .project-title h2 {
   padding: 15px;
