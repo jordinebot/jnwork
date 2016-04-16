@@ -169,14 +169,14 @@ h2 {
   padding: 0 15px;
   opacity: 1;
   color: black;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .project-title h2 {
   padding: 15px;
-  text-align: center;
 }
 
 .project-link {
@@ -209,6 +209,11 @@ h2 {
 
 .project-details h2 {
   margin: 0 0 2em 0;
+}
+
+.project-details h2 + p {
+  font-size: 1.25em;
+  font-weight: bold;
 }
 
 .project-details p {
@@ -269,6 +274,10 @@ h2 {
   }
   h1 {
     font-size: 2.45em;
+  }
+  .project-images,
+  .project-details {
+    width: 100%;
   }
 }
 
